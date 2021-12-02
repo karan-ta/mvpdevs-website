@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tinkru - The Online Coach For Makers</title>
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Electrolize">
+<style type = "text/css">
+	.trans--grow{
+   -webkit-transition: all 0.5s ease-out; /* For Safari 3.1 to 6.0 */
+        transition: all 0.5s  ease-out;
+        width : 0;
+}
+.grow{
+    width:100%;
+}
+p{
+	font-family: "helvetica", "sans-serif";
+  line-height: 1.3em;
+}
+body{
+	width:960px;
+	margin: 0 auto;
+}
+
+h1 a.mylogo{
+	font-family: "Electrolize", "sans-serif";
+    font-weight: bold;
+   color: red;
+    text-transform: uppercase;
+    font-size: 40px;
+    line-height: 60px;
+   float:left;
+    margin:0px;
+    cursor: pointer;
+}
+h3.tagline{
+
+	margin:0px;
+font-family: "Titillium Web", "sans-serif";
+line-height: 31.5px;
+text-align: center;
+color:#00d500;
+font-weight: 545;
+font-size: 42px;
+letter-spacing: -1px;
+
+}
+hr{
+	border:0.8px solid red;
+	clear: both;
+}
+ul.menu{
+	font-family: "Titillium Web", "sans-serif";
+	margin-left:50%;
+	list-style-type: none;
+
+}
+ul.menu li{
+	float:left;
+	margin-left: 25px;
+}
+ul.menu li a{
+	color: #333;
+	text-decoration: none;
+	font-size: 20px;
+		padding:5px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+/*ul.menu a:active{
+	background-color: red;
+	color: #333;
+	border-top:3px solid #fea501;
+	text-decoration: none;
+}*/
+a.classeslink,a.bookingslink,a.storelink,a.bloglink{
+	 transition-property: all;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+a.classeslink:hover,a.bookingslink:hover,a.storelink:hover,a.bloglink:hover{
+	font-size: 24px;
+padding:0px;
+}
+</style>	
+</head>
+<body>
+
+<h1>
+<a class = "mylogo">
+	Tinkru
+</a>
+</h1>	
+<ul class = "menu">
+<li>
+<a name = "classes.html" class = "menulink classeslink" href = "classes.html">
+Classes
+</a>
+</li>
+<li>
+<a class = "menulink bookingslink" href = "classes.html">	
+Bookings
+</a>
+</li>	
+<li>
+<a class = "menulink storelink" href = "classes.html">
+Store
+</a>
+</li>	
+<li>
+<a class = "menulink bloglink" href = "classes.html">
+Blog
+</a>
+</li>	
+</ul>	
+<hr class = "trans--grow"/>
+<br/>
+<br/>
+<h3 id = "tagline" class = "tagline">
+	</h3>
+	<script type = "text/javascript">
+
+	setTimeout(function(){
+
+		var x = document.getElementsByClassName("trans--grow");
+		x[0].classList.add("grow");
+    
+	}, 5);
+	var i = 0;
+	var txt = 'The Online Coach For Makers.'; /* The text */
+	var speed = 15; /* The speed/duration of the effect in milliseconds */
+	function typeWriter() {
+  		if (i < txt.length) {
+    	document.getElementById("tagline").innerHTML += txt.charAt(i);
+    	i++;
+    	setTimeout(typeWriter, speed);
+  }
+}
+
+function loadMe()
+{
+	document.getElementsByClassName ("mylogo")[0].onclick = function(){
+	audioclick.play();
+	setTimeout(function(){
+         document.location.href  = "/";
+    },120);    
+      return false;
+    }
+
+   var audioclick = new Audio();
+   audioclick.src = "click.mp3";
+      var audiodeploy = new Audio();
+     audiodeploy.src = "deploy.mp3";
+      audiodeploy.play();
+   var allMenuLinks = document.getElementsByClassName("menulink");
+ 
+ for (var i=0; i < allMenuLinks.length; i++) {
+ 	allMenuLinks[i].style.backgroundColor = "white";
+ 	allMenuLinks[i].style.color = "#333";
+
+ 	 allMenuLinks[i].onmouseover = function(){
+ 	this.style.color = "#00d500";
+ 	 }
+ 	 allMenuLinks[i].onmouseout = function(){
+ 	this.style.color = "#333";
+ 	 }
+ 	 allMenuLinks[i].onmouseup = function(){
+ 	this.style.backgroundColor = "red";
+ 	this.style.padding = "2px";
+ 	this.style.color = "#FFF";
+ 	 }
+    allMenuLinks[i].onclick = function(elem){
+	audioclick.play();
+	let mytarget = elem.target;
+	setTimeout(function(){
+         document.location.href  = mytarget.href;
+    },120);    
+      return false;
+    }
+}
+}
+window.onload = function(e){ 
+	
+   typeWriter ();
+	loadMe();
+}
+	
+	</script>
+</body>
+</html>

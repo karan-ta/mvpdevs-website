@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tinkru - The Online Coach For Makers</title>
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Electrolize">
+<style type = "text/css">
+	.trans--grow{
+   -webkit-transition: all 0.5s ease-in-out; /* For Safari 3.1 to 6.0 */
+        transition: all 0.5s  ease-in-out;
+        width : 100%;
+        height:0;
+}
+.trans--grow1{
+   -webkit-transition: all 0.5s ease-in-out; /* For Safari 3.1 to 6.0 */
+        transition: all 0.5s  ease-in-out;
+        width : 0;
+        height:0;
+}
+.grow{
+    width:100%;
+    height:150px;
+}
+.grow1{
+    width:100%;
+}
+.growactionlink{
+   width:100%;
+    height:23px;
+}
+
+body{
+	width:960px;
+	margin: 0 auto;
+
+}
+
+h1 a.mylogo{
+	font-family: "Electrolize", "sans-serif";
+    font-weight: bold;
+   color: red;
+    text-transform: uppercase;
+    font-size: 40px;
+    line-height: 60px;
+   float:left;
+    margin:0px;
+    cursor: pointer;
+}
+h3.tagline{
+
+	margin:0px;
+font-family: "Titillium Web", "sans-serif";
+line-height: 31.5px;
+text-align: center;
+color:#00d500;
+font-weight: 545;
+font-size: 42px;
+letter-spacing: -1px;
+
+}
+p{
+	font-family: "helvetica", "sans-serif";
+  line-height: 1.3em;
+}
+hr{
+	border:0.8px solid red;
+	clear: both;
+}
+ul.menu{
+	font-family: "Titillium Web", "sans-serif";
+	margin-left:50%;
+	list-style-type: none;
+
+}
+ul.menu li{
+	float:left;
+	margin-left: 25px;
+}
+ul.menu li a{
+	color: #333;
+	text-decoration: none;
+	font-size: 22px;
+		padding:5px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+/*ul.menu a:active{
+	background-color: red;
+	color: #333;
+	border-top:3px solid #fea501;
+	text-decoration: none;
+}*/
+.classesheader{
+	font-family: "Electrolize", "sans-serif";
+	 font-size: 24px;
+	 color:#333;
+	 padding:0px;
+	 margin: 0px;
+}
+.classcontainer{
+	border:0.9px solid #00d500;
+	padding:15px;
+	border-radius: 5px;
+	margin: 0;
+}
+a.classeslink,a.bookingslink,a.storelink,a.bloglink{
+   transition-property: all;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+a.classeslink:hover,a.bookingslink:hover,a.storelink:hover,a.bloglink:hover{
+  font-size: 24px;
+padding:0px;
+}
+
+.actionlink{
+  font-size:24px;
+  font-family: "helvetica", "sans-serif";
+  padding:7px;
+ width:170px;
+ display:block;
+ 
+  border:0.7px solid red;
+   margin:0px;
+  cursor:pointer;
+}
+
+</style>	
+</head>
+<body>
+
+<h1>
+<a class = "mylogo">
+	Tinkru
+</a>
+</h1>	
+<ul class = "menu">
+<li>
+<a name = "classes.html" class = "menulink classeslink" href = "classes.html">
+Classes
+</a>
+</li>
+<li>
+<a class = "menulink bookingslink" href = "bookings.html"> 
+Bookings
+</a>
+</li> 
+<li>
+<a class = "menulink storelink" href = "classes.html">
+Store
+</a>
+</li> 
+<li>
+<a class = "menulink bloglink" href = "classes.html">
+Blog
+</a>
+</li> 
+</ul> 
+<hr class = "trans--grow1"/>
+<br/>
+<br/>
+<div class = "classcontainer mobileappclass trans--grow">
+  <div style = "float:left;">
+<h4 id = "mobileappclassheader" class = "classesheader mobileappclassheader">
+</h4>
+<p id = "mobileapppara">
+
+</p>	
+</div>
+<div style = "float:right;">
+  <br/>
+
+ <a class = "trans--grow actionlink photoaction">
+
+ </a>
+
+<br/>
+ <a class = "trans--grow actionlink bookingaction">
+
+ </a>
+</div>
+</div>
+<br/>
+<div class = "classcontainer websiteclass trans--grow">
+<h4 id = "websiteclassheader" class = "classesheader websiteclassheader">
+</h4>
+<p id = "websitepara">
+
+</p>	
+</div>
+<br/>
+<div class = "classcontainer electronicsclass trans--grow">
+<h4 id = "electronicsclassheader" class = "classesheader electronicsclassheader">
+</h4>
+<p id = "electronicspara">
+
+</p>	
+</div>
+<br/>
+<script type = "text/javascript">
+
+	var i = 0;
+	var j = 0;
+	var k = 0;
+	var txt = 'Make Mobile Apps With Flutter.'; /* The text */
+	var txt2 = 'Make Websites With HTML,CSS.'; /* The text */
+	var txt3 = 'Make Circuits with Arduino.'; /* The text */
+	var txt1 = 'You will learn the basics of dart programming language.<br/>Start Making mobile apps with Flutter Framework.<br/>Make Cool Tech to solve world problems.'; /* The text */
+	var speed = 15; /* The speed/duration of the effect in milliseconds */
+	function typeWriter() {
+		
+  		if (i < txt.length) {
+    	document.getElementById("mobileappclassheader").innerHTML += txt.charAt(i);
+    
+    		i++;
+    	setTimeout(typeWriter, speed);
+  }
+  else{
+  	typeWriter1 ();
+  }
+}
+
+function typeWriter1() {
+  		
+    	document.getElementById("mobileapppara").innerHTML += txt1;
+  
+    	
+  }
+ 
+function typeWriter2() {
+		
+  		if (j < txt2.length) {
+    	document.getElementById("websiteclassheader").innerHTML += txt2.charAt(j);
+    		j++;
+    	setTimeout(typeWriter2, speed);
+  }
+  else{
+  	typeWriter3 ();
+  }
+}
+function typeWriter3() {
+  		
+    	document.getElementById("websitepara").innerHTML += txt1;
+  
+    	
+  }
+  function typeWriter4() {
+		
+  		if (k < txt3.length) {
+    	document.getElementById("electronicsclassheader").innerHTML += txt3.charAt(k);
+    		k++;
+    	setTimeout(typeWriter4, speed);
+  }
+  else{
+  	typeWriter5 ();
+  }
+}
+function typeWriter5() {
+  		
+    	document.getElementById("electronicspara").innerHTML += txt1;
+  
+    	
+  }
+function waitSeconds(iMilliSeconds) {
+    var counter= 0
+        , start = new Date().getTime()
+        , end = 0;
+    while (counter < iMilliSeconds) {
+        end = new Date().getTime();
+        counter = end - start;
+    }
+}
+function loadMe()
+{
+		setTimeout(function(){
+		var x = document.getElementsByClassName("trans--grow");
+		var x1 = document.getElementsByClassName("trans--grow1");
+		x[0].classList.add("grow");
+		x[1].classList.add("growactionlink");
+		x[2].classList.add("growactionlink");
+    x[3].classList.add("grow");
+    x[4].classList.add("grow");
+		x1[0].classList.add("grow1");
+     
+	}, 5);
+setTimeout(function(){
+document.getElementsByClassName ("photoaction")[0].innerHTML += "View Photos"
+    document.getElementsByClassName ("bookingaction")[0].innerHTML += "Book Now";
+
+},255);
+	document.getElementsByClassName ("mylogo")[0].onclick = function(){
+	audioclick.play();
+	setTimeout(function(){
+         document.location.href  = "/";
+    },120);    
+      return false;
+    }
+
+   var audioclick = new Audio();
+   audioclick.src = "click.mp3";
+      var audiodeploy = new Audio();
+     audiodeploy.src = "deploy.mp3";
+      audiodeploy.play();
+
+   var allActionLinks = document.getElementsByClassName("actionlink");
+   var allMenuLinks = document.getElementsByClassName("menulink");
+ 
+
+      
+  //   allActionLinks[i].onmouseover = function(){
+  // this.style.color = "#00d500";
+  //  }
+  allActionLinks[0].style.color = "#00d500";
+      allActionLinks[0].onmouseup = function(){
+  this.style.backgroundColor = "green";
+   audioclick.play();
+  setTimeout(function(){
+          document.getElementsByClassName("actionlink")[0].style.backgroundColor = "white";
+          document.location.href = "bookings.html";
+     },100); 
+  }
+  allActionLinks[1].style.color = "#00d500";
+      allActionLinks[1].onmouseup = function(){
+  this.style.backgroundColor = "green";
+   audioclick.play();
+  setTimeout(function(){
+          document.getElementsByClassName("actionlink")[1].style.backgroundColor = "white";
+          document.location.href = "bookings.html";
+     },100); 
+  }
+
+
+ for (var i=0; i < allMenuLinks.length; i++) {
+ 	allMenuLinks[i].style.backgroundColor = "white";
+ 	allMenuLinks[i].style.color = "#333";
+
+ 	 allMenuLinks[i].onmouseover = function(){
+ 	this.style.color = "#00d500";
+ 	 }
+ 	 allMenuLinks[i].onmouseout = function(){
+ 	this.style.color = "#333";
+ 	 }
+ 	 allMenuLinks[i].onmouseup = function(){
+ 	this.style.backgroundColor = "red";
+  this.style.padding = "2px";
+ 	this.style.color = "white";
+ 	 }
+    allMenuLinks[i].onclick = function(elem){
+	audioclick.play();
+	let mytarget = elem.target;
+	setTimeout(function(){
+         document.location.href  = mytarget.href;
+    },150);    
+      return false;
+    }
+}
+}
+window.onload = function(e){ 
+	
+   typeWriter ();
+   typeWriter2 ();
+    typeWriter4 ();
+   
+	loadMe();
+}
+	
+	</script>
+</body>
+</html>
