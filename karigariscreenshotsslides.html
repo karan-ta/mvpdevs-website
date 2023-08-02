@@ -13,11 +13,11 @@
 		width:250px;
 		height:450px;
 	}
-    .screenshot_slide{
+    .slideImage{
         text-align: center;
     }
 
-    .screenshot_slide > img{
+    .slideImage > img{
         border:2px solid #aaa;
 		width:250px;
 		height:450px;
@@ -127,6 +127,27 @@ padding:0px;
 }
 .roundButton{ 
 border-radius: 50%;
+}
+
+#slidesHeading{
+    text-align: center;
+}
+.inlineBlock{
+    display: inline-block;
+}
+
+.slideButton{
+    margin-left:10px;
+}
+.largeButton {
+  font-size: 20px;
+  padding:8px 16px;
+  border:2px solid #ccc;
+  color: #777;
+  cursor: pointer;
+  
+}
+
 </style>	
 </head>
 <body>
@@ -161,25 +182,50 @@ Team
 <hr class = "trans--grow"/>
 <br/>
 
-
-<h3 class = "classesheader alignCenter" id = "karigariScreenshotsSlides">
+<div id = "slidesHeading">
+<h3 class = "classesheader inlineBlock" id = "karigariScreenshotsSlides">
 </h3>	
-<button id = "previousSlide" class="slideButton roundButton">
+<button id = "previousSlide" class="slideButton roundButton largeButton">
     <
 </button>
 
-<button id = "nextSlide" class="slideButton roundButton">
+<button id = "nextSlide" class="slideButton largeButton roundButton">
     >
 </button>
+</div>
+
+<br/>
 <br/>
 <div class = "screenshot_slide">
-<img class = "slideImage" src="one.jpg"/>
-<img class = "slideImage" src="two.jpg"/>
-<img class = "slideImage" src="three.jpg"/>
-<img class = "slideImage" src="four.jpg"/>
-<img class = "slideImage" src="five.jpg"/>
-<img class = "slideImage" src="six.jpg"/>
-<img class = "slideImage" src="seven.jpg"/>
+
+<div class = "slideImage">
+<img src="one.jpg"/>
+</div>
+
+<div class = "slideImage">
+<img src="two.jpg"/>
+</div>
+
+<div class = "slideImage">
+<img src="three.jpg"/>
+</div>
+
+<div class = "slideImage">
+<img src="four.jpg"/>
+</div>
+
+<div class = "slideImage">
+<img src="five.jpg"/>
+</div>
+
+<div class = "slideImage">
+<img src="six.jpg"/>
+</div>
+
+<div class = "slideImage">
+<img src="seven.jpg"/>
+</div>
+
 </div>
 
 	<script type = "text/javascript">
@@ -196,7 +242,7 @@ Team
     var k = 0
 	var txt = 'We craft your MVP.' /* The text */
 	var portfolioHeadingText = 'Our Portfolio.' /* The text */
-    var karigariScreenshotsSlidesText = 'Karigari Screenshots Slides.' /* The text */
+    var karigariScreenshotsSlidesText = 'Karigari App Screenshots.' /* The text */
 	var speed = 15  /* The speed/duration of the effect in milliseconds */
     
 
