@@ -13,9 +13,22 @@
 		width:250px;
 		height:450px;
 	}
+    .screenshot_slide{
+        text-align: center;
+    }
+
+    .screenshot_slide > img{
+        border:2px solid #aaa;
+		width:250px;
+		height:450px;
+    }
+
 	.marginRight15{
 		margin-right:15%;
 	}
+    .alignCenter{
+        text-align: center;
+    }
 	.classesheader{
 	font-family: "Electrolize", "sans-serif";
 	 font-size: 24px;
@@ -112,6 +125,8 @@ a.classeslink:hover,a.bookingslink:hover,a.storelink:hover,a.bloglink:hover{
 	font-size: 24px;
 padding:0px;
 }
+.roundButton{ 
+border-radius: 50%;
 </style>	
 </head>
 <body>
@@ -145,43 +160,27 @@ Team
 </ul>	
 <hr class = "trans--grow"/>
 <br/>
-<br/>
-<h3 id = "tagline" class = "tagline">
-	</h3>
-<br/>
-<br/>
-<h3 class = "classesheader" id = "portfolioHeading">
+
+
+<h3 class = "classesheader alignCenter" id = "karigariScreenshotsSlides">
 </h3>	
-	<ul class = "portfolioList">
-		<li class = "appImage marginRight15">
-			<h4>
-				App Name: Karigari
-			</h4>
-			<h4>
-            Developer: <a href = "#">@mrtechmaker</a>
-			</h4>
-			
-			<br/>
-           <img src="one.jpg"/>
-		   <h4>
-			<a href = "karigariscreenshotsslides.html">
-				View Screenshot Slides
-			</a>
-		</h4>
-		<h4>
-			<a href = "#">View Demo Video</a>
-		</h4>
-		</li>
-		<li class = "marginRight15">
-            test 2
-		</li>
-		<li>
-			test 3
-		</li>
+<button id = "previousSlide" class="slideButton roundButton">
+    <
+</button>
 
-	</ul>
-	
-
+<button id = "nextSlide" class="slideButton roundButton">
+    >
+</button>
+<br/>
+<div class = "screenshot_slide">
+<img class = "slideImage" src="one.jpg"/>
+<img class = "slideImage" src="two.jpg"/>
+<img class = "slideImage" src="three.jpg"/>
+<img class = "slideImage" src="four.jpg"/>
+<img class = "slideImage" src="five.jpg"/>
+<img class = "slideImage" src="six.jpg"/>
+<img class = "slideImage" src="seven.jpg"/>
+</div>
 
 	<script type = "text/javascript">
 
@@ -191,28 +190,64 @@ Team
 		x[0].classList.add("grow");
     
 	}, 5);
+    var slideCount = 0
 	var i = 0
 	var j = 0
-	var txt = 'We craft Android native, web app MVP.' /* The text */
+    var k = 0
+	var txt = 'We craft your MVP.' /* The text */
 	var portfolioHeadingText = 'Our Portfolio.' /* The text */
+    var karigariScreenshotsSlidesText = 'Karigari Screenshots Slides.' /* The text */
 	var speed = 15  /* The speed/duration of the effect in milliseconds */
-	function typeWriter() {
-  		if (i < txt.length) {
-    	document.getElementById("tagline").innerHTML += txt.charAt(i)
-    	i++
-    	setTimeout(typeWriter, speed)
-  }
-}
-function typeWriter1() {
-  		if (j < txt.length) {
-    	document.getElementById("portfolioHeading").innerHTML += portfolioHeadingText.charAt(j);
-    	j++;
-    	setTimeout(typeWriter1, speed);
+    
+
+
+
+function typeWriter2() {
+  		if (k < karigariScreenshotsSlidesText.length) {   
+    	document.getElementById("karigariScreenshotsSlides").innerHTML += karigariScreenshotsSlidesText.charAt(k)
+    	k++
+    	setTimeout(typeWriter2, speed)
   }
 }
 
 function loadMe()
 {
+    const slideImages = document.getElementsByClassName('slideImage')
+    console.log(slideImages)
+    for (let i = 0; i < slideImages.length; i++) {
+        slideImages[i].style.display = 'none'
+
+    }
+    slideImages[0].style.display = 'block'
+    const slideButtons = document.getElementsByClassName('slideButton')
+    for (let i = 0; i < slideButtons.length; i++) {
+        slideButtons[i].addEventListener('click', function() {
+        console.log(`Button ${i+1} clicked!`)
+        console.log(slideCount)
+        console.log(this.id)
+        console.log(this.id == 'nextSlide')
+        slideImages[slideCount].style.display = 'none'
+        if(this.id == 'previousSlide')
+        {
+            slideCount--
+            if(slideCount < 0)
+            {
+                slideCount = 0
+            }
+        }
+        else
+        {
+            slideCount++
+            if(slideCount > slideImages.length - 1)
+            {
+                slideCount = slideImages.length - 1
+            }
+        }
+        slideImages[slideCount].style.display = 'block'
+        })
+  }
+    
+
 	document.getElementsByClassName ("mylogo")[0].onclick = function(){
 	audioclick.play();
 	setTimeout(function(){
@@ -239,25 +274,24 @@ function loadMe()
  	this.style.color = "#333";
  	 }
  	 allMenuLinks[i].onmouseup = function(){
- 	this.style.backgroundColor = "red";
- 	this.style.padding = "2px";
- 	this.style.color = "#FFF";
+ 	this.style.backgroundColor = "red"
+ 	this.style.padding = "2px"
+ 	this.style.color = "#FFF"
  	 }
     allMenuLinks[i].onclick = function(elem){
-	audioclick.play();
-	let mytarget = elem.target;
+	audioclick.play()
+	let mytarget = elem.target
 	setTimeout(function(){
-         document.location.href  = mytarget.href;
-    },120);    
-      return false;
+         document.location.href  = mytarget.href
+    },120)
+      return false
     }
 }
 }
 window.onload = function(e){ 
 	
-   typeWriter ();
-   typeWriter1 ();
-	loadMe();
+   typeWriter2 ()
+	loadMe()
 }
 	
 	</script>
