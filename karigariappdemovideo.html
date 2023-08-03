@@ -22,6 +22,11 @@
 		width:250px;
 		height:450px;
     }
+    .slideImage > video{
+        border:2px solid #aaa;
+		width:250px;
+		height:450px;
+    }
 
 	.marginRight15{
 		margin-right:15%;
@@ -185,13 +190,13 @@ Team
 <div id = "slidesHeading">
 <h3 class = "classesheader inlineBlock" id = "karigariScreenshotsSlides">
 </h3>	
-<button id = "previousSlide" class="slideButton roundButton largeButton">
+<!-- <button id = "previousSlide" class="slideButton roundButton largeButton">
     <
 </button>
 
 <button id = "nextSlide" class="slideButton largeButton roundButton">
     >
-</button>
+</button> -->
 </div>
 
 <br/>
@@ -199,32 +204,16 @@ Team
 <div class = "screenshot_slide">
 
 <div class = "slideImage">
-<img src="one.jpg"/>
+    <video width="250" height="450" controls>
+        <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4">
+        <!-- Add additional source elements for other formats if needed -->
+        <!-- <source src="path_to_your_video_file.webm" type="video/webm"> -->
+        <!-- <source src="path_to_your_video_file.ogg" type="video/ogg"> -->
+        Your browser does not support the video tag.
+      </video>
 </div>
 
-<div class = "slideImage">
-<img src="two.jpg"/>
-</div>
 
-<div class = "slideImage">
-<img src="three.jpg"/>
-</div>
-
-<div class = "slideImage">
-<img src="four.jpg"/>
-</div>
-
-<div class = "slideImage">
-<img src="five.jpg"/>
-</div>
-
-<div class = "slideImage">
-<img src="six.jpg"/>
-</div>
-
-<div class = "slideImage">
-<img src="seven.jpg"/>
-</div>
 
 </div>
 
@@ -242,7 +231,7 @@ Team
     var k = 0
 	var txt = 'We craft your MVP.' /* The text */
 	var portfolioHeadingText = 'Our Portfolio.' /* The text */
-    var karigariScreenshotsSlidesText = 'Karigari App Screenshots.' /* The text */
+    var karigariScreenshotsSlidesText = 'Karigari App Demo Video.' /* The text */
 	var speed = 15  /* The speed/duration of the effect in milliseconds */
     
 
@@ -258,40 +247,40 @@ function typeWriter2() {
 
 function loadMe()
 {
-    const slideImages = document.getElementsByClassName('slideImage')
-    console.log(slideImages)
-    for (let i = 0; i < slideImages.length; i++) {
-        slideImages[i].style.display = 'none'
+    // const slideImages = document.getElementsByClassName('slideImage')
+    // console.log(slideImages)
+    // for (let i = 0; i < slideImages.length; i++) {
+    //     slideImages[i].style.display = 'none'
 
-    }
-    slideImages[0].style.display = 'block'
-    const slideButtons = document.getElementsByClassName('slideButton')
-    for (let i = 0; i < slideButtons.length; i++) {
-        slideButtons[i].addEventListener('click', function() {
-        console.log(`Button ${i+1} clicked!`)
-        console.log(slideCount)
-        console.log(this.id)
-        console.log(this.id == 'nextSlide')
-        slideImages[slideCount].style.display = 'none'
-        if(this.id == 'previousSlide')
-        {
-            slideCount--
-            if(slideCount < 0)
-            {
-                slideCount = 0
-            }
-        }
-        else
-        {
-            slideCount++
-            if(slideCount > slideImages.length - 1)
-            {
-                slideCount = slideImages.length - 1
-            }
-        }
-        slideImages[slideCount].style.display = 'block'
-        })
-  }
+    // }
+    // slideImages[0].style.display = 'block'
+    // const slideButtons = document.getElementsByClassName('slideButton')
+//     for (let i = 0; i < slideButtons.length; i++) {
+//         slideButtons[i].addEventListener('click', function() {
+//         console.log(`Button ${i+1} clicked!`)
+//         console.log(slideCount)
+//         console.log(this.id)
+//         console.log(this.id == 'nextSlide')
+//         slideImages[slideCount].style.display = 'none'
+//         if(this.id == 'previousSlide')
+//         {
+//             slideCount--
+//             if(slideCount < 0)
+//             {
+//                 slideCount = 0
+//             }
+//         }
+//         else
+//         {
+//             slideCount++
+//             if(slideCount > slideImages.length - 1)
+//             {
+//                 slideCount = slideImages.length - 1
+//             }
+//         }
+//         slideImages[slideCount].style.display = 'block'
+//         })
+//   }
     
 
 	document.getElementsByClassName ("mylogo")[0].onclick = function(){
