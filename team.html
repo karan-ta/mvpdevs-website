@@ -8,10 +8,12 @@
 		text-align: center;
 	}
 	.portfolioHeading{
-		width:20%;
+		width:30%;
 		margin:0 auto;
 		text-align:center;
+        color:#555;
 		text-decoration: underline;
+       
 	}
 	.portfolioContainer{
 		width:35%;
@@ -34,18 +36,11 @@
 	.classesheader{
 	font-family: "Electrolize", "sans-serif";
 	 font-size: 24px;
-	 color:#333;
+	 color:#555;
 	 padding:0px;
 	 margin: 0px;
 }
-	.trans--grow{
-   -webkit-transition: all 0.5s ease-out; /* For Safari 3.1 to 6.0 */
-        transition: all 0.5s  ease-out;
-        width : 0;
-}
-.grow{
-    width:100%;
-}
+
 p{
 	font-family: "helvetica", "sans-serif";
   line-height: 1.3em;
@@ -123,7 +118,71 @@ a.classeslink:hover,a.bookingslink:hover,a.storelink:hover,a.bloglink:hover{
 	font-size: 24px;
 padding:0px;
 }
+label{
+    font-family: "Titillium Web", "sans-serif";
+    font-size: 16px;
+    padding:5px;
+    color:#555;
+}
+input[type="text"] {
+            height: 25px; /* You can set the desired height in pixels or any other valid CSS unit */
+            padding:5px;
+            font-size: 16px;
+        }
+textarea{
+    padding:5px;   
+    font-size: 16px; 
+}
 
+.largeButton {
+  font-size: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+
+}
+.classcontainer{
+	border:0.9px solid #00d500;
+	padding:15px;
+	border-radius: 5px;
+	margin: 0 auto;
+    width:70%;
+}
+
+.trans--grow{
+   -webkit-transition: all 0.5s ease-in-out; /* For Safari 3.1 to 6.0 */
+        transition: all 0.5s  ease-in-out;
+        width : 70%;
+        height:0;
+}
+.trans--grow1{
+   -webkit-transition: all 0.5s ease-in-out; /* For Safari 3.1 to 6.0 */
+        transition: all 0.5s  ease-in-out;
+        width : 0;
+        height:0;
+}
+.grow{
+    width:70%;
+    height:100px;
+}
+.grow1{
+    width:100%;
+}
+.growactionlink{
+   width:100%;
+    height:23px;
+}
+.devProfile{
+    width:70px;
+    height:70px;
+    padding:0px 20px;
+   
+ 
+    border-radius: 50%;
+}
+#mobileapppara{
+    font-size: 16px;
+    font-family: sans-serif;
+}
 </style>	
 </head>
 <body>
@@ -134,20 +193,16 @@ padding:0px;
 </a>
 </h1>	
 <ul class = "menu">
-	
-<li>
+<!-- <li>
 <a name = "classes.html" class = "menulink classeslink" href = "classes.html">
 Portfolio
 </a>
-</li> 
-
-<!-- <li>
-<a class = "menulink bookingslink" href = "classes.html">	
-Blog
+</li> -->
+<li>
+<a class = "menulink bookingslink" href = "index.html">	
+Portfolio
 </a>
-</li>	 -->
-
-
+</li>	
 <li>
 <a class = "menulink storelink" href = "contact.html">
 Contact
@@ -159,80 +214,77 @@ Team
 </a>
 </li>	
 </ul>	
-<hr class = "trans--grow"/>
+<hr class = "trans--grow1"/>
 <br/>
 <br/>
-<h3 id = "tagline" class = "tagline">
-	</h3>
-<br/>
-<br/>
+
 <div class = "portfolioHeading">
 <h3 class = "classesheader" id = "portfolioHeading">
 </h3>
 </div>	
-<div class = "portfolioContainer">
-	<ul class = "portfolioList alignCenter">
-		<li class = "appImage marginRight15">
-			<h4>
-				App Name: Karigari
-			</h4>
-			<h4>
-            Developer: <a href = "#">@mrtechmaker</a>
-			</h4>
-			
-			<br/>
-           <img src="one.jpg"/>
-		   <h4>
-			<a href = "karigariscreenshotsslides.html">
-				View Screenshot Slides
-			</a>
-		</h4>
-		<h4>
-			<a href = "karigariappdemovideo.html">View Demo Video</a>
-		</h4>
-		</li>
-		<!-- <li class = "marginRight15">
-            test 2
-		</li>
-		<li>
-			test 3
-		</li> -->
-
-	</ul>
-</div>
+<br/>
+<br/>
+<div class = "classcontainer mobileappclass trans--grow">
+    <div style = "float:left;">
+    <img class = "devProfile" src = "karan.jpg" />
+    </div>
+    <div style = "float:left;">
+  <h4 id = "mobileappclassheader" class = "classesheader mobileappclassheader">
+  </h4>
+  <p id = "mobileapppara">
+  
+  </p>	
+  </div>
+</div>  
 	
 
 
 	<script type = "text/javascript">
 
-	setTimeout(function(){
 
-		var x = document.getElementsByClassName("trans--grow");
-		x[0].classList.add("grow");
-    
-	}, 5);
-	var i = 0
+    var i = 0
 	var j = 0
-	var txt = 'We craft Android native, web app MVP.' /* The text */
-	var portfolioHeadingText = 'Our Portfolio.' /* The text */
-	var speed = 15  /* The speed/duration of the effect in milliseconds */
-	function typeWriter() {
-  		if (i < txt.length) {
-    	document.getElementById("tagline").innerHTML += txt.charAt(i)
-    	i++
-    	setTimeout(typeWriter, speed)
-  }
-}
-function typeWriter1() {
-  		if (j < txt.length) {
+	var portfolioHeadingText = 'Meet MVPDEVS Team' /* The text */
+	var speed = 20  /* The speed/duration of the effect in milliseconds */
+    var txt = "Karan Ahuja"
+    var txt1 = "I am android, web app developer.<br/><br/> I am also interested in biotechnology. "
+    function typeWriter1() {
+  		if (j < portfolioHeadingText.length) {
     	document.getElementById("portfolioHeading").innerHTML += portfolioHeadingText.charAt(j);
     	j++;
     	setTimeout(typeWriter1, speed);
   }
 }
+function typeWriter() {
+		
+        if (i < txt.length) {
+      document.getElementById("mobileappclassheader").innerHTML += txt.charAt(i);
+  
+          i++;
+      setTimeout(typeWriter, speed);
+}
+else{
+  	typeWriter2 ();
+  }
+}
+
+function typeWriter2() {
+  		
+          document.getElementById("mobileapppara").innerHTML += txt1;
+    
+          
+    }
 
 function loadMe()
 {
+    setTimeout(function(){
+		var x = document.getElementsByClassName("trans--grow");
+		var x1 = document.getElementsByClassName("trans--grow1");
+		x[0].classList.add("grow");
+		
+		x1[0].classList.add("grow1");
+     
+	}, 5);
 	document.getElementsByClassName ("mylogo")[0].onclick = function(){
 	audioclick.play();
 	setTimeout(function(){
@@ -274,10 +326,10 @@ function loadMe()
 }
 }
 window.onload = function(e){ 
-	
+    loadMe();
    typeWriter ();
    typeWriter1 ();
-	loadMe();
+	
 }
 	
 	</script>
